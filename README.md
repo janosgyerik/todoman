@@ -1,4 +1,4 @@
-todoman
+TodoMan
 =======
 
 Yet another todo-list manager, featuring:
