@@ -1,15 +1,8 @@
 initial implementation
 ----------------------
 
-- basic classes
-    - model
-    - one-line view
-    - collection
 - basic ui
-    - bs3
     - input box to add items
-    - list of items
-    - stored in local storage -> still remembered on page reload
 
 simple ui features
 ------------------
