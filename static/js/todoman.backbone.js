@@ -33,9 +33,10 @@ App.OneLineView = Backbone.View.extend({
     tagName: 'tr',
     template: _.template($('#oneline-template').html()),
     events: {
-        //'keypress .edit': 'updateOnEnter',
-        //'blur .edit': 'close'
         //'dblclick .view': 'edit',
+        'blur .todo-edit': 'close',
+        'keypress .todo-edit': 'updateOnEnter',
+        'click .todo-title': 'edit',
         'click .todo-remove': 'clear'
     },
     initialize: function () {
@@ -44,25 +45,26 @@ App.OneLineView = Backbone.View.extend({
     },
     render: function () {
         this.$el.html(this.template(this.model.toJSON()));
-        //this.input = this.$('.edit');
+        this.input = this.$('.todo-edit');
         return this;
     },
     edit: function () {
-        //this.$el.addClass('editing');
-        //this.input.focus();
+        this.$el.addClass('todo-editing');
+        this.input.focus();
     },
     close: function () {
-        //var value = this.input.val();
-        //if (!value) {
-        //    this.clear();
-        //}
-        //this.model.set({keyword: value});
-        //this.$el.removeClass('editing');
+        var value = this.input.val();
+        if (!value) {
+            this.clear();
+        }
+        this.model.set({title: value});
+        this.model.save();
+        this.$el.removeClass('todo-editing');
     },
     updateOnEnter: function (e) {
-        //if (e.keyCode == 13) {
-        //    this.close();
-        //}
+        if (e.keyCode == 13) {
+            this.close();
+        }
     },
     clear: function () {
         this.model.clear();

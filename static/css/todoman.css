@@ -2,6 +2,18 @@ body {
     overflow: hidden;
 }
 
+#todolist-list tr.todo-editing .todo-edit {
+    display: block;
+}
+
+#todolist-list tr.todo-editing .todo-view {
+    display: none;
+}
+
+#todolist-list tr .todo-edit {
+    display: none;
+}
+
 #map {
     position: relative;
 }

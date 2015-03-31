@@ -1,15 +1,9 @@
 initial implementation
 ----------------------
 
-- basic ui
-    - input box to add items
-
-simple ui features
-------------------
-
+- input box to add items
 - mark / unmark done on click
 - edit title on double-click
-- flag important
 
 detailed view and editing
 -------------------------
@@ -32,3 +26,8 @@ grouping by target date
     - beyond 1 week, name like April 1, April 2, April 2
 - highlight late tasks
 - the later the task, the more intense the highlight
+
+more features
+-------------
+
+- flag as important
