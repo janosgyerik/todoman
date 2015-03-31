@@ -33,10 +33,10 @@ App.OneLineView = Backbone.View.extend({
     tagName: 'tr',
     template: _.template($('#oneline-template').html()),
     events: {
-        //'dblclick .view': 'edit',
-        //'click a.destroy': 'clear',
         //'keypress .edit': 'updateOnEnter',
         //'blur .edit': 'close'
+        //'dblclick .view': 'edit',
+        'click .todo-remove': 'clear'
     },
     initialize: function () {
         this.model.bind('change', this.render, this);
