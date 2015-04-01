@@ -1,8 +1,18 @@
 initial implementation
 ----------------------
 
-- input box to add items
 - mark / unmark done on click
+
+important features
+------------------
+
+- prettier input box
+- rearrange items
+    - ideally with drag and drop
+    - or at least with up-down buttons
+- edit date
+    - ideally using a calendar selector (see jquery ui)
+    - at least with plain text input
 
 detailed view and editing
 -------------------------
@@ -29,4 +39,6 @@ grouping by target date
 more features
 -------------
 
+- export in ikog format
+- import from ikog format
 - flag as important

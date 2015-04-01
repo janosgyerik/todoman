@@ -71,6 +71,29 @@ App.OneLineView = Backbone.View.extend({
     }
 });
 
+App.NewTodoView = Backbone.View.extend({
+    el: '.todo-new',
+    events: {
+        'keypress': 'registerNewTodoOnEnter'
+    },
+    initialize: function (options) {
+        this.list = options.list;
+        this.$el.focus();
+    },
+    registerNewTodoOnEnter: function (e) {
+        if (e.keyCode == 13) {
+            var title = this.$el.val();
+
+            // TODO: isn't there a cleaner/simpler/better way?
+            var todo = new App.Todo({title: title});
+            this.list.add(todo);
+            todo.save();
+
+            this.$el.val('');
+        }
+    }
+});
+
 App.TodoList = Backbone.Collection.extend({
     model: App.Todo,
     localStorage: new Store('todoman-backbone'),
@@ -139,6 +162,11 @@ function onDomReady() {
     //App.model = new App.Model();
 
     App.todoList = new App.TodoList();
+
+    new App.NewTodoView({
+        list: App.todoList
+    });
+
     //App.todoList.create(new App.Todo());
     //App.todoList.create(new App.Todo());
     //App.todoList.create(new App.Todo());
