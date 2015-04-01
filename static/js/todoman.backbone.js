@@ -36,7 +36,7 @@ App.OneLineView = Backbone.View.extend({
         //'dblclick .view': 'edit',
         'blur .todo-edit': 'close',
         'keypress .todo-edit': 'updateOnEnter',
-        'click .todo-title': 'edit',
+        'dblclick .todo-title': 'edit',
         'click .todo-remove': 'clear'
     },
     initialize: function () {

@@ -3,7 +3,6 @@ initial implementation
 
 - input box to add items
 - mark / unmark done on click
-- edit title on double-click
 
 detailed view and editing
 -------------------------
