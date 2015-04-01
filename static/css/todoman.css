@@ -14,6 +14,23 @@ body {
     display: none;
 }
 
+#todolist-list tr.todo-done .todo-checked {
+    display: inline-block;
+}
+
+#todolist-list tr.todo-done .todo-unchecked {
+    display: none;
+}
+
+#todolist-list tr.todo-done {
+    color: silver;
+    background-color: #eee;
+}
+
+#todolist-list tr .todo-checked {
+    display: none;
+}
+
 #map {
     position: relative;
 }

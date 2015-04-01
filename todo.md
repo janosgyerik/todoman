@@ -1,11 +1,15 @@
-initial implementation
-----------------------
-
-- mark / unmark done on click
-
 important features
 ------------------
 
+- move done tasks to the bottom
+    - use two lists: one for pending and one for done
+    - order pending items by original order
+    - order done items by done date desc
+    - pending -> done:
+        + record done date
+        + record original ordering index
+    - done -> pending:
+        + re-insert at original ordering index
 - prettier input box
 - rearrange items
     - ideally with drag and drop

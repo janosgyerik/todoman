@@ -33,8 +33,8 @@ App.OneLineView = Backbone.View.extend({
     tagName: 'tr',
     template: _.template($('#oneline-template').html()),
     events: {
-        //'dblclick .view': 'edit',
         'blur .todo-edit': 'close',
+        'click .todo-mark': 'toggleDone',
         'keypress .todo-edit': 'updateOnEnter',
         'dblclick .todo-title': 'edit',
         'click .todo-remove': 'clear'
@@ -42,11 +42,25 @@ App.OneLineView = Backbone.View.extend({
     initialize: function () {
         this.model.bind('change', this.render, this);
         this.model.bind('destroy', this.remove, this);
+        if (this.model.get('done')) {
+            this.toggleDone();
+        }
     },
     render: function () {
         this.$el.html(this.template(this.model.toJSON()));
         this.input = this.$('.todo-edit');
         return this;
+    },
+    toggleDone: function () {
+        var doneClass = 'todo-done';
+        if (this.$el.hasClass(doneClass)) {
+            this.$el.removeClass(doneClass);
+            this.model.set({done: false});
+        } else {
+            this.$el.addClass(doneClass);
+            this.model.set({done: true});
+        }
+        this.model.save();
     },
     edit: function () {
         this.$el.addClass('todo-editing');

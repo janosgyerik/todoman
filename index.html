@@ -49,14 +49,17 @@
         <table class="table">
             <thead>
             <tr>
+                <th></th>
                 <th>Task name / stuff to do</th>
                 <th class="">Date</th>
+                <th class="">Done?</th>
                 <!--<th>Edit</th>-->
                 <th>Delete</th>
             </tr>
             </thead>
             <tbody>
             <tr>
+                <th></th>
                 <td>
                     <input class="todo-title todo-new" type="text" placeholder="stuff to do..."/>
                 </td>
@@ -79,10 +82,15 @@
 <!-- TODO: this should be moved to a file to serve via CDN -->
 <script type="text/template" id="oneline-template">
     <td>
+        <i class="glyphicon glyphicon-unchecked todo-mark todo-unchecked"></i>
+        <i class="glyphicon glyphicon-check todo-mark todo-checked"></i>
+    </td>
+    <td>
         <span class="todo-title todo-view">{{ title }}</span>
         <input class="todo-title todo-edit" type="text" value="{{ title }}"/>
     </td>
     <td><span class="todo-date">{{ date }}</span></td>
+    <td><span class="">{{ done }}</span></td>
     <!--<td><i class="glyphicon glyphicon-pencil"></i></td>-->
     <td><i class="glyphicon glyphicon-remove todo-remove"></i></td>
 </script>
